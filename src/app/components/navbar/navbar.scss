@@ -1,0 +1,486 @@
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 1000;
+
+  padding: 24px 0;
+
+  pointer-events: none;
+
+
+  .nav-container {
+
+    width: min(1200px, 90%);
+
+    min-height: 66px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 12px 12px 12px 18px;
+
+    background: rgba(10, 10, 10, 0.65);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 18px;
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+      0 10px 40px rgba(0, 0, 0, 0.18);
+
+    pointer-events: auto;
+
+    transition:
+      background 0.3s ease,
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+
+  &:hover {
+
+    .nav-container {
+
+      background: rgba(10, 10, 10, 0.78);
+
+      border-color: rgba(255, 255, 255, 0.12);
+
+      box-shadow:
+        0 14px 45px rgba(0, 0, 0, 0.25);
+    }
+  }
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  flex-shrink: 0;
+
+  height: 38px;
+
+
+  /* =======================================
+     LOGO IMAGE
+  ======================================= */
+
+  .logo-mark {
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    /*
+      BLACK BACKGROUND
+    */
+    background: #080808;
+
+    /*
+      Subtle border
+    */
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+      inset 0 0 12px rgba(255, 255, 255, 0.025);
+
+    transition:
+      transform 0.3s ease,
+      background 0.3s ease,
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+
+  .logo-mark img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    /*
+      Small breathing room
+      around the logo
+    */
+    padding: 4px;
+  }
+
+
+  /* =======================================
+     LOGO NAME
+  ======================================= */
+
+  .logo-name {
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+
+    white-space: nowrap;
+
+
+    span {
+
+      color: #7c3aed;
+    }
+  }
+
+
+  /* =======================================
+     LOGO HOVER
+  ======================================= */
+
+  &:hover {
+
+    .logo-mark {
+
+      transform:
+        rotate(-6deg)
+        scale(1.04);
+
+      background: #050505;
+
+      border-color:
+        rgba(124, 58, 237, 0.45);
+
+      box-shadow:
+        0 0 20px rgba(124, 58, 237, 0.12),
+        inset 0 0 12px rgba(255, 255, 255, 0.03);
+    }
+  }
+}
+
+
+/* =========================================
+   NAV LINKS
+========================================= */
+
+.nav-links {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 34px;
+
+
+  a {
+
+    position: relative;
+
+    padding: 8px 0;
+
+    color: #999;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.2px;
+
+    transition:
+      color 0.3s ease;
+
+
+    &:hover {
+
+      color: #fff;
+    }
+
+
+    /* =====================================
+       UNDERLINE
+    ===================================== */
+
+    &::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 50%;
+
+      bottom: 0;
+
+      width: 0;
+
+      height: 1px;
+
+      background: #7c3aed;
+
+      transform:
+        translateX(-50%);
+
+      transition:
+        width 0.3s ease;
+    }
+
+
+    &:hover::after {
+
+      width: 100%;
+    }
+  }
+}
+
+
+/* =========================================
+   CONTACT BUTTON
+========================================= */
+
+.contact-btn {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  min-width: 108px;
+
+  padding: 11px 17px;
+
+  border-radius: 12px;
+
+  background: #fff;
+
+  color: #080808;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+
+  span {
+
+    font-size: 16px;
+
+    transition:
+      transform 0.3s ease;
+  }
+
+
+  &:hover {
+
+    transform:
+      translateY(-2px);
+
+    box-shadow:
+      0 10px 30px rgba(255, 255, 255, 0.12);
+
+
+    span {
+
+      transform:
+        translate(3px, -3px);
+    }
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .navbar {
+
+    padding: 20px 0;
+  }
+
+
+  .nav-container {
+
+    width: 92% !important;
+  }
+
+
+  .nav-links {
+
+    gap: 22px;
+
+
+    a {
+
+      font-size: 12px;
+    }
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+
+    padding: 14px 0;
+  }
+
+
+  .nav-container {
+
+    width: 92% !important;
+
+    min-height: 58px;
+
+    padding:
+      9px
+      9px
+      9px
+      14px;
+
+    border-radius: 15px;
+  }
+
+
+  /* =======================================
+     MOBILE LOGO
+  ======================================= */
+
+  .logo {
+
+    height: 34px;
+
+    gap: 9px;
+
+
+    .logo-mark {
+
+      width: 34px;
+
+      height: 34px;
+
+      border-radius: 10px;
+    }
+
+
+    .logo-mark img {
+
+      padding: 3px;
+    }
+
+
+    .logo-name {
+
+      font-size: 16px;
+    }
+  }
+
+
+  /* =======================================
+     HIDE NAV LINKS
+  ======================================= */
+
+  .nav-links {
+
+    display: none;
+  }
+
+
+  /* =======================================
+     CONTACT
+  ======================================= */
+
+  .contact-btn {
+
+    min-width: 96px;
+
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    font-size: 11px;
+
+
+    span {
+
+      font-size: 14px;
+    }
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .nav-container {
+
+    padding-left: 10px;
+  }
+
+
+  .logo {
+
+    .logo-name {
+
+      display: none;
+    }
+  }
+
+
+  .contact-btn {
+
+    min-width: 92px;
+  }
+}
